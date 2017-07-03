@@ -7,14 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5560B2B4E4455CE65866DD2B /* Pods_Lichcupdien.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68B964BDDC87B76390312AB5 /* Pods_Lichcupdien.framework */; };
 		FAA66E711F0A73770005BE71 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA66E701F0A73770005BE71 /* AppDelegate.swift */; };
 		FAA66E731F0A73770005BE71 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA66E721F0A73770005BE71 /* ViewController.swift */; };
 		FAA66E761F0A73770005BE71 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAA66E741F0A73770005BE71 /* Main.storyboard */; };
 		FAA66E781F0A73770005BE71 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAA66E771F0A73770005BE71 /* Assets.xcassets */; };
 		FAA66E7B1F0A73770005BE71 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAA66E791F0A73770005BE71 /* LaunchScreen.storyboard */; };
+		FAA66E851F0A73EA0005BE71 /* TinhObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA66E841F0A73EA0005BE71 /* TinhObj.swift */; };
+		FAA66E891F0A79900005BE71 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FAA66E881F0A79900005BE71 /* GoogleService-Info.plist */; };
+		FAA66E8B1F0A7E4B0005BE71 /* SampleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA66E8A1F0A7E4B0005BE71 /* SampleTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		68B964BDDC87B76390312AB5 /* Pods_Lichcupdien.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Lichcupdien.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8630B9EB7E74F75C129CA240 /* Pods-Lichcupdien.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lichcupdien.release.xcconfig"; path = "Pods/Target Support Files/Pods-Lichcupdien/Pods-Lichcupdien.release.xcconfig"; sourceTree = "<group>"; };
+		E899300F6F10AD11A904DF38 /* Pods-Lichcupdien.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lichcupdien.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Lichcupdien/Pods-Lichcupdien.debug.xcconfig"; sourceTree = "<group>"; };
 		FAA66E6D1F0A73770005BE71 /* Lichcupdien.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lichcupdien.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAA66E701F0A73770005BE71 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAA66E721F0A73770005BE71 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +29,9 @@
 		FAA66E771F0A73770005BE71 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FAA66E7A1F0A73770005BE71 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FAA66E7C1F0A73770005BE71 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FAA66E841F0A73EA0005BE71 /* TinhObj.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TinhObj.swift; sourceTree = "<group>"; };
+		FAA66E881F0A79900005BE71 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FAA66E8A1F0A7E4B0005BE71 /* SampleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +39,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5560B2B4E4455CE65866DD2B /* Pods_Lichcupdien.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		424B72964391F12F21F86FE1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E899300F6F10AD11A904DF38 /* Pods-Lichcupdien.debug.xcconfig */,
+				8630B9EB7E74F75C129CA240 /* Pods-Lichcupdien.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		BB354DDAF2B9FCE20E4325A4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				68B964BDDC87B76390312AB5 /* Pods_Lichcupdien.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		FAA66E641F0A73770005BE71 = {
 			isa = PBXGroup;
 			children = (
 				FAA66E6F1F0A73770005BE71 /* Lichcupdien */,
 				FAA66E6E1F0A73770005BE71 /* Products */,
+				424B72964391F12F21F86FE1 /* Pods */,
+				BB354DDAF2B9FCE20E4325A4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,6 +86,9 @@
 			children = (
 				FAA66E701F0A73770005BE71 /* AppDelegate.swift */,
 				FAA66E721F0A73770005BE71 /* ViewController.swift */,
+				FAA66E881F0A79900005BE71 /* GoogleService-Info.plist */,
+				FAA66E841F0A73EA0005BE71 /* TinhObj.swift */,
+				FAA66E8A1F0A7E4B0005BE71 /* SampleTableViewCell.swift */,
 				FAA66E741F0A73770005BE71 /* Main.storyboard */,
 				FAA66E771F0A73770005BE71 /* Assets.xcassets */,
 				FAA66E791F0A73770005BE71 /* LaunchScreen.storyboard */,
@@ -71,9 +104,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FAA66E7F1F0A73770005BE71 /* Build configuration list for PBXNativeTarget "Lichcupdien" */;
 			buildPhases = (
+				EA9D118BD4FFF4C3B9529791 /* [CP] Check Pods Manifest.lock */,
 				FAA66E691F0A73770005BE71 /* Sources */,
 				FAA66E6A1F0A73770005BE71 /* Frameworks */,
 				FAA66E6B1F0A73770005BE71 /* Resources */,
+				8198F493A6FA556EC072DA6B /* [CP] Embed Pods Frameworks */,
+				6C2B710F4949D50C3932796E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -124,6 +160,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FAA66E7B1F0A73770005BE71 /* LaunchScreen.storyboard in Resources */,
+				FAA66E891F0A79900005BE71 /* GoogleService-Info.plist in Resources */,
 				FAA66E781F0A73770005BE71 /* Assets.xcassets in Resources */,
 				FAA66E761F0A73770005BE71 /* Main.storyboard in Resources */,
 			);
@@ -131,13 +168,63 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		6C2B710F4949D50C3932796E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Lichcupdien/Pods-Lichcupdien-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8198F493A6FA556EC072DA6B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Lichcupdien/Pods-Lichcupdien-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EA9D118BD4FFF4C3B9529791 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		FAA66E691F0A73770005BE71 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				FAA66E731F0A73770005BE71 /* ViewController.swift in Sources */,
+				FAA66E8B1F0A7E4B0005BE71 /* SampleTableViewCell.swift in Sources */,
 				FAA66E711F0A73770005BE71 /* AppDelegate.swift in Sources */,
+				FAA66E851F0A73EA0005BE71 /* TinhObj.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,6 +347,7 @@
 		};
 		FAA66E801F0A73770005BE71 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E899300F6F10AD11A904DF38 /* Pods-Lichcupdien.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Lichcupdien/Info.plist;
@@ -272,6 +360,7 @@
 		};
 		FAA66E811F0A73770005BE71 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8630B9EB7E74F75C129CA240 /* Pods-Lichcupdien.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Lichcupdien/Info.plist;
@@ -301,6 +390,7 @@
 				FAA66E811F0A73770005BE71 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
