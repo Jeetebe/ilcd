@@ -9,7 +9,7 @@
 import Foundation
 import SwiftyJSON
 
-class HuyenObj
+class TinhObj
 {
     var _tinhdau:String = ""
     var _tinhid:String = ""
@@ -23,15 +23,15 @@ class HuyenObj
     }
 
     required init?(json: SwiftyJSON.JSON) {
-        self._tinhdau = json["huyendau"].string!
-        self._tinhid = json["huyenid"].string!
-        self._ngay = json["huyen"].string!
+        self._tinhdau = json["tinhdau"].string!
+        self._tinhid = json["tinhid"].string!
+        self._ngay = json["maxdate"].string!
           }
     
     convenience init?(json: [String: Any]) {
-        guard let _tinhdau = json["huyendau"] as? String,
-            let _tinhid = json["huyenid"] as? String,
-            let _ngay = json["huyen"] as? String
+        guard let _tinhdau = json["tinhdau"] as? String,
+            let _tinhid = json["tinhid"] as? String,
+            let _ngay = json["maxdate"] as? String
                        else {
                 return nil
         }

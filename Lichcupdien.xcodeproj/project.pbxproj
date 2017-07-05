@@ -16,6 +16,9 @@
 		FAA66E851F0A73EA0005BE71 /* TinhObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA66E841F0A73EA0005BE71 /* TinhObj.swift */; };
 		FAA66E891F0A79900005BE71 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FAA66E881F0A79900005BE71 /* GoogleService-Info.plist */; };
 		FAA66E8B1F0A7E4B0005BE71 /* SampleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA66E8A1F0A7E4B0005BE71 /* SampleTableViewCell.swift */; };
+		FAF979041F0D1BB700703A34 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF979031F0D1BB700703A34 /* WebViewController.swift */; };
+		FAF979061F0D1FFB00703A34 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAF979051F0D1FFB00703A34 /* Social.framework */; };
+		FAF979081F0D381300703A34 /* HuyenObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF979071F0D381300703A34 /* HuyenObj.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +35,9 @@
 		FAA66E841F0A73EA0005BE71 /* TinhObj.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TinhObj.swift; sourceTree = "<group>"; };
 		FAA66E881F0A79900005BE71 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FAA66E8A1F0A7E4B0005BE71 /* SampleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleTableViewCell.swift; sourceTree = "<group>"; };
+		FAF979031F0D1BB700703A34 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		FAF979051F0D1FFB00703A34 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		FAF979071F0D381300703A34 /* HuyenObj.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HuyenObj.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAF979061F0D1FFB00703A34 /* Social.framework in Frameworks */,
 				5560B2B4E4455CE65866DD2B /* Pods_Lichcupdien.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -58,6 +65,7 @@
 		BB354DDAF2B9FCE20E4325A4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FAF979051F0D1FFB00703A34 /* Social.framework */,
 				68B964BDDC87B76390312AB5 /* Pods_Lichcupdien.framework */,
 			);
 			name = Frameworks;
@@ -84,12 +92,14 @@
 		FAA66E6F1F0A73770005BE71 /* Lichcupdien */ = {
 			isa = PBXGroup;
 			children = (
+				FAF979071F0D381300703A34 /* HuyenObj.swift */,
 				FAA66E701F0A73770005BE71 /* AppDelegate.swift */,
 				FAA66E721F0A73770005BE71 /* ViewController.swift */,
 				FAA66E881F0A79900005BE71 /* GoogleService-Info.plist */,
 				FAA66E841F0A73EA0005BE71 /* TinhObj.swift */,
 				FAA66E8A1F0A7E4B0005BE71 /* SampleTableViewCell.swift */,
 				FAA66E741F0A73770005BE71 /* Main.storyboard */,
+				FAF979031F0D1BB700703A34 /* WebViewController.swift */,
 				FAA66E771F0A73770005BE71 /* Assets.xcassets */,
 				FAA66E791F0A73770005BE71 /* LaunchScreen.storyboard */,
 				FAA66E7C1F0A73770005BE71 /* Info.plist */,
@@ -132,6 +142,7 @@
 				TargetAttributes = {
 					FAA66E6C1F0A73770005BE71 = {
 						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = AW2QKY6358;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -222,8 +233,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				FAA66E731F0A73770005BE71 /* ViewController.swift in Sources */,
+				FAF979081F0D381300703A34 /* HuyenObj.swift in Sources */,
 				FAA66E8B1F0A7E4B0005BE71 /* SampleTableViewCell.swift in Sources */,
 				FAA66E711F0A73770005BE71 /* AppDelegate.swift in Sources */,
+				FAF979041F0D1BB700703A34 /* WebViewController.swift in Sources */,
 				FAA66E851F0A73EA0005BE71 /* TinhObj.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -350,9 +363,10 @@
 			baseConfigurationReference = E899300F6F10AD11A904DF38 /* Pods-Lichcupdien.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = AW2QKY6358;
 				INFOPLIST_FILE = Lichcupdien/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.jtb4.Lichcupdien;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jtb4.lichcupdien;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -363,9 +377,10 @@
 			baseConfigurationReference = 8630B9EB7E74F75C129CA240 /* Pods-Lichcupdien.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = AW2QKY6358;
 				INFOPLIST_FILE = Lichcupdien/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.jtb4.Lichcupdien;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jtb4.lichcupdien;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};

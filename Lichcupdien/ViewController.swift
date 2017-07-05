@@ -9,13 +9,38 @@
 import UIKit
 import GoogleMobileAds
 import Alamofire
+import  Social
 
 class ViewController: UIViewController ,GADNativeExpressAdViewDelegate, GADVideoControllerDelegate {
 
+    let link:String="Ứng dụng Lịch cúp điện  http://itunes.apple.com/app/id1232657493"
+    
+    @IBAction func refresh_click(_ sender: Any) {
+         alamofireGetLog()
+    }
+    
+    
+    @IBAction func fshare(_ sender: Any) {
+        if SLComposeViewController.isAvailable(forServiceType: SLServiceTypeFacebook) {
+            let controller = SLComposeViewController(forServiceType: SLServiceTypeFacebook)
+            
+            controller?.setInitialText(link)
+            //controller.addImage(captureScreen())
+            self.present(controller!, animated:true, completion:nil)
+        }
+            
+        else {
+            print("no Facebook account found on device")
+            var alert = UIAlertView(title: "Thông báo", message: "Bạn chưa đăng nhập facebook", delegate: nil, cancelButtonTitle: "OK")
+            alert.show()
+        }
+
+    }
     @IBOutlet weak var myHeight: NSLayoutConstraint!
     @IBOutlet weak var viewC: UIView!
     let adUnitId = "ca-app-pub-8623108209004118/6575771983"
     var list:[TinhObj]=[]
+    var indicator: UIActivityIndicatorView!
     
     @IBOutlet weak var myTable: UITableView!
     @IBOutlet weak var nativeExpressAdView: GADNativeExpressAdView!
@@ -24,6 +49,12 @@ class ViewController: UIViewController ,GADNativeExpressAdViewDelegate, GADVideo
         // Do any additional setup after loading the view, typically from a nib.
         
         alamofireGetLog()
+        
+//        indicator = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.gray)
+//        indicator.frame = CGRect(x: 0.0, y: 0.0, width: 40.0, height: 40.0);        indicator.center = view.center
+//        view.addSubview(indicator)
+//        indicator.bringSubview(toFront: view)
+//        UIApplication.shared.isNetworkActivityIndicatorVisible = true
         
         
         //admod
@@ -68,8 +99,10 @@ class ViewController: UIViewController ,GADNativeExpressAdViewDelegate, GADVideo
             cell = Bundle.main.loadNibNamed("Celllog", owner: self, options: nil)?[0] as! SampleTableViewCell;
         }
         let tinh = list[indexPath.row]._tinhdau as String //NOT NSString
-        let ngay = list[indexPath.row]._ngay as String //NOT NSString
+        let str = list[indexPath.row]._ngay as String //NOT NSString
    
+        let index1 = str.index(str.startIndex, offsetBy: 10)
+        let ngay = str.substring(to: index1)
             cell.lbngay.text=ngay
         cell.lbtinh.text = String(indexPath.row+1) + ". " + tinh
         
@@ -83,7 +116,8 @@ class ViewController: UIViewController ,GADNativeExpressAdViewDelegate, GADVideo
     }
 
     func alamofireGetLog() {
-        print("get 1song")
+        print("get tinh")
+        //indicator.startAnimating()
       
         let todoEndpoint: String = "http://123.30.100.126:8081/Restapi/rest/lichcupdien/getdmtinhsupport"
                   //print("url\(todoEndpoint)")
@@ -119,8 +153,24 @@ class ViewController: UIViewController ,GADNativeExpressAdViewDelegate, GADVideo
                 self.myTable.reloadData()
                 self.myHeight.constant += self.tableViewHeight()
                 self.viewC.layoutIfNeeded()
+               // self.indicator.stopAnimating()
                 
                 
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+
+    {
+        print("click")
+        if segue.identifier == "DetailSegue"
+        {
+            let detailViewController = ((segue.destination) as! WebViewController)
+            
+            let indexPath = self.myTable!.indexPathForSelectedRow!
+            let tinhobj = list[indexPath.row]
+            detailViewController.tinhobj=tinhobj
+            print("tinh123:\(tinhobj._tinhdau)")
         }
     }
 
