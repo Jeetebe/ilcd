@@ -13,7 +13,11 @@ import  Alamofire
 import Social
 
 
-class WebViewController: UIViewController {
+class WebViewController: UIViewController, GADRewardBasedVideoAdDelegate,GADInterstitialDelegate {
+    func rewardBasedVideoAd(_ rewardBasedVideoAd: GADRewardBasedVideoAd, didRewardUserWith reward: GADAdReward) {
+        
+    }
+    
 
     var tinhobj:TinhObj!
     var list=[HuyenObj]()
@@ -21,14 +25,23 @@ class WebViewController: UIViewController {
     var urlhuyen = "http://123.30.100.126:8081/weblogalarm/lichmatdienv3.1.jsp?device=ios&tinhid="
     
     let dropDown = DropDown()
+    
+    var interstitial: GADInterstitial!
+
 
     @IBOutlet weak var btnchon: UILabel!
     @IBAction func back(_ sender: Any) {
-        self.dismiss(animated: false, completion: nil)
+        if interstitial.isReady {
+            interstitial.present(fromRootViewController: self)
+        } else {
+            print("Ad wasn't ready")
+             self.dismiss(animated: false, completion: nil)
+        }
+       
     }
     
     
-    @IBOutlet weak var bannerView: GADBannerView!
+    //@IBOutlet weak var bannerView: GADBannerView!
     @IBAction func shareinfo(_ sender: Any) {
         if SLComposeViewController.isAvailable(forServiceType: SLServiceTypeFacebook) {
             let controller = SLComposeViewController(forServiceType: SLServiceTypeFacebook)
@@ -65,9 +78,9 @@ class WebViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        print(tinhobj._tinhid)
-        lbTitle.text=tinhobj._tinhdau
-        url=url+tinhobj._tinhid
+        print(tinhobj.tinhid)
+        lbTitle.text=tinhobj.tinhdau
+        url=url+tinhobj.tinhid
         //print(url)
         
         let requestURL = NSURL(string:url)!
@@ -81,7 +94,7 @@ class WebViewController: UIViewController {
         dropDown.selectionAction = { [unowned self] (index, item) in
             let huyenid=self.list[index]._tinhid
             print("huyenid: \(huyenid)")
-            let url2=self.urlhuyen+self.tinhobj._tinhid + "&huyenid=" + huyenid
+            let url2=self.urlhuyen+self.tinhobj.tinhid + "&huyenid=" + huyenid
             print(url2)
             let requestURL = NSURL(string:url2)
             let request = URLRequest(url: requestURL! as URL)
@@ -92,14 +105,30 @@ class WebViewController: UIViewController {
 
         alamofireGetLog()
         
-        //ads
-        bannerView.adSize=kGADAdSizeSmartBannerPortrait
-        print("Google Mobile Ads SDK version: \(GADRequest.sdkVersion())")
-        bannerView.adUnitID = "ca-app-pub-8623108209004118/8052505184"
-        bannerView.rootViewController = self
-        bannerView.load(GADRequest())
+//        //ads
+//        bannerView.adSize=kGADAdSizeSmartBannerPortrait
+//        print("Google Mobile Ads SDK version: \(GADRequest.sdkVersion())")
+//        bannerView.adUnitID = "ca-app-pub-8623108209004118/8052505184"
+//        bannerView.rootViewController = self
+//        bannerView.load(GADRequest())
+        
+        interstitial = GADInterstitial(adUnitID: "ca-app-pub-8623108209004118/5622775628")
+        let request2 = GADRequest()
+        interstitial.load(request2)
+        interstitial.delegate = self
+    }
+    func createAndLoadInterstitial() -> GADInterstitial {
+        //        var interstitial = GADInterstitial(adUnitID: "ca-app-pub-8623108209004118/4267318788")
+        //        interstitial.delegate = self as! GADInterstitialDelegate
+        //        interstitial.load(GADRequest())
+        return interstitial
     }
     
+    func interstitialDidDismissScreen(_ ad: GADInterstitial) {
+        // interstitial = createAndLoadInterstitial()
+        self.dismiss(animated: true, completion: nil)
+        
+    }
 
     @IBAction func chon_huyen(_ sender: Any) {
         dropDown.show()
@@ -113,7 +142,7 @@ class WebViewController: UIViewController {
     func alamofireGetLog() {
         print("get huyen")
         
-        let todoEndpoint: String = "http://123.30.100.126:8081/Restapi/rest/lichcupdien/getdmhuyen?tinhid="+tinhobj._tinhid
+        let todoEndpoint: String = "http://123.30.100.126:8081/Restapi/rest/lichcupdien/getdmhuyen?tinhid="+tinhobj.tinhid
         print("url\(todoEndpoint)")
         Alamofire.request(todoEndpoint)
             

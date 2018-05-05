@@ -11,20 +11,20 @@ import SwiftyJSON
 
 class TinhObj
 {
-    var _tinhdau:String = ""
-    var _tinhid:String = ""
+    var tinhdau:String = ""
+    var tinhid:String = ""
     var _ngay:String = ""
      required init?(_tinhdau: String?, _tinhid: String?, _ngay: String?) {
-        self._tinhdau = _tinhdau!
-        self._tinhid=_tinhid!
+        self.tinhdau = _tinhdau!
+        self.tinhid=_tinhid!
         self._ngay=_ngay!
      
         
     }
 
     required init?(json: SwiftyJSON.JSON) {
-        self._tinhdau = json["tinhdau"].string!
-        self._tinhid = json["tinhid"].string!
+        self.tinhdau = json["tinhdau"].string!
+        self.tinhid = json["tinhid"].string!
         self._ngay = json["maxdate"].string!
           }
     
