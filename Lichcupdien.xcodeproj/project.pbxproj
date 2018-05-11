@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		5560B2B4E4455CE65866DD2B /* Pods_Lichcupdien.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68B964BDDC87B76390312AB5 /* Pods_Lichcupdien.framework */; };
+		FA1C41F420A5DB1B0030B052 /* DesignButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1C41F120A5DB1B0030B052 /* DesignButton.swift */; };
+		FA1C41F520A5DB1B0030B052 /* DesignTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1C41F220A5DB1B0030B052 /* DesignTextField.swift */; };
+		FA1C41F620A5DB1B0030B052 /* DesignView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1C41F320A5DB1B0030B052 /* DesignView.swift */; };
+		FA1C41F820A5DC400030B052 /* ChonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1C41F720A5DC400030B052 /* ChonViewController.swift */; };
 		FA53664A209DFBAF00972B85 /* InitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA536649209DFBAF00972B85 /* InitViewController.swift */; };
 		FA53664C209DFCF200972B85 /* FarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA53664B209DFCF200972B85 /* FarViewController.swift */; };
 		FA53664E209E071E00972B85 /* Tinh.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA53664D209E071E00972B85 /* Tinh.swift */; };
@@ -28,6 +32,10 @@
 		68B964BDDC87B76390312AB5 /* Pods_Lichcupdien.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Lichcupdien.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8630B9EB7E74F75C129CA240 /* Pods-Lichcupdien.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lichcupdien.release.xcconfig"; path = "Pods/Target Support Files/Pods-Lichcupdien/Pods-Lichcupdien.release.xcconfig"; sourceTree = "<group>"; };
 		E899300F6F10AD11A904DF38 /* Pods-Lichcupdien.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lichcupdien.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Lichcupdien/Pods-Lichcupdien.debug.xcconfig"; sourceTree = "<group>"; };
+		FA1C41F120A5DB1B0030B052 /* DesignButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignButton.swift; sourceTree = "<group>"; };
+		FA1C41F220A5DB1B0030B052 /* DesignTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignTextField.swift; sourceTree = "<group>"; };
+		FA1C41F320A5DB1B0030B052 /* DesignView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignView.swift; sourceTree = "<group>"; };
+		FA1C41F720A5DC400030B052 /* ChonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChonViewController.swift; sourceTree = "<group>"; };
 		FA536649209DFBAF00972B85 /* InitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitViewController.swift; sourceTree = "<group>"; };
 		FA53664B209DFCF200972B85 /* FarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FarViewController.swift; sourceTree = "<group>"; };
 		FA53664D209E071E00972B85 /* Tinh.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tinh.swift; sourceTree = "<group>"; };
@@ -77,6 +85,17 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		FA1C41F020A5DB1B0030B052 /* Design */ = {
+			isa = PBXGroup;
+			children = (
+				FA1C41F120A5DB1B0030B052 /* DesignButton.swift */,
+				FA1C41F220A5DB1B0030B052 /* DesignTextField.swift */,
+				FA1C41F320A5DB1B0030B052 /* DesignView.swift */,
+			);
+			name = Design;
+			path = ../../../3khia_online/Daunoionline/Design;
+			sourceTree = "<group>";
+		};
 		FAA66E641F0A73770005BE71 = {
 			isa = PBXGroup;
 			children = (
@@ -98,11 +117,13 @@
 		FAA66E6F1F0A73770005BE71 /* Lichcupdien */ = {
 			isa = PBXGroup;
 			children = (
+				FA1C41F720A5DC400030B052 /* ChonViewController.swift */,
 				FAF979071F0D381300703A34 /* HuyenObj.swift */,
 				FAA66E701F0A73770005BE71 /* AppDelegate.swift */,
 				FAA66E721F0A73770005BE71 /* ViewController.swift */,
 				FAA66E881F0A79900005BE71 /* GoogleService-Info.plist */,
 				FAA66E841F0A73EA0005BE71 /* TinhObj.swift */,
+				FA1C41F020A5DB1B0030B052 /* Design */,
 				FAA66E8A1F0A7E4B0005BE71 /* SampleTableViewCell.swift */,
 				FAA66E741F0A73770005BE71 /* Main.storyboard */,
 				FA53664B209DFCF200972B85 /* FarViewController.swift */,
@@ -242,14 +263,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				FAA66E731F0A73770005BE71 /* ViewController.swift in Sources */,
+				FA1C41F820A5DC400030B052 /* ChonViewController.swift in Sources */,
 				FA53664A209DFBAF00972B85 /* InitViewController.swift in Sources */,
 				FA53664C209DFCF200972B85 /* FarViewController.swift in Sources */,
 				FAF979081F0D381300703A34 /* HuyenObj.swift in Sources */,
 				FAA66E8B1F0A7E4B0005BE71 /* SampleTableViewCell.swift in Sources */,
 				FAA66E711F0A73770005BE71 /* AppDelegate.swift in Sources */,
+				FA1C41F520A5DB1B0030B052 /* DesignTextField.swift in Sources */,
 				FA53664E209E071E00972B85 /* Tinh.swift in Sources */,
+				FA1C41F620A5DB1B0030B052 /* DesignView.swift in Sources */,
 				FAF979041F0D1BB700703A34 /* WebViewController.swift in Sources */,
 				FAA66E851F0A73EA0005BE71 /* TinhObj.swift in Sources */,
+				FA1C41F420A5DB1B0030B052 /* DesignButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

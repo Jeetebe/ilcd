@@ -6,33 +6,35 @@
 	<string>ca-app-pub-3940256099942544/2934735716</string>
 	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
 	<string>ca-app-pub-3940256099942544/4411468910</string>
-    <key>AD_UNIT_ID_FOR_INTERSTITIAL_medium</key>
-    <string>ca-app-pub-8623108209004118/4361721581</string>
 	<key>CLIENT_ID</key>
-	<string>test-do-not-use.apps.googleusercontent.com</string>
+	<string>936448163269-3khvaettdog3le8fkfnb3pbs9l318dou.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.test-do-not-use</string>
+	<string>com.googleusercontent.apps.936448163269-3khvaettdog3le8fkfnb3pbs9l318dou</string>
 	<key>API_KEY</key>
-	<string>000000000000000000000000000000000000000</string>
+	<string>AIzaSyAA1rjxQVFn5uRKynRaGrgTa8TSfgYRGBM</string>
 	<key>GCM_SENDER_ID</key>
-	<string>999999999999</string>
+	<string>936448163269</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.ioscreator.IOS8SwiftTabBarControllerTutorial</string>
+	<string>com.jtb4.lichcupdien</string>
+	<key>PROJECT_ID</key>
+	<string>lich-cup-dien</string>
+	<key>STORAGE_BUCKET</key>
+	<string>lich-cup-dien.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
-	<true/>
+	<true></true>
 	<key>IS_ANALYTICS_ENABLED</key>
-	<false/>
+	<false></false>
 	<key>IS_APPINVITE_ENABLED</key>
-	<false/>
+	<false></false>
 	<key>IS_GCM_ENABLED</key>
-	<false/>
+	<true></true>
 	<key>IS_SIGNIN_ENABLED</key>
-	<false/>
+	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:999999999999:ios:0000000000000000</string>
+	<string>1:936448163269:ios:bfca985e422dff7f</string>
 	<key>DATABASE_URL</key>
-	<string>https://test-do-not-use.firebaseio.com</string>
+	<string>https://lich-cup-dien.firebaseio.com</string>
 </dict>
 </plist>

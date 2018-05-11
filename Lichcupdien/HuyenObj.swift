@@ -9,8 +9,24 @@
 import Foundation
 import SwiftyJSON
 
-class TinhObj
+class TinhObj: NSObject, NSCoding
 {
+    required init(coder aDecoder: NSCoder) {
+        
+        tinhdau = (aDecoder.decodeObject(forKey: "tinhdau") as? String)!
+        tinhid = (aDecoder.decodeInteger(forKey: "tinhid") as? String)!
+        _ngay = (aDecoder.decodeInteger(forKey: "_ngay") as? String)!
+    }
+    
+    
+    public func encode(with aCoder: NSCoder) {
+        
+        aCoder.encode(tinhdau, forKey: "tinhdau")
+        aCoder.encode(tinhid, forKey: "tinhid")
+        aCoder.encode(_ngay, forKey: "_ngay")
+        
+    }
+    
     var tinhdau:String = ""
     var tinhid:String = ""
     var _ngay:String = ""

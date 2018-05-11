@@ -11,14 +11,15 @@ import  GoogleMobileAds
 import DropDown
 import  Alamofire
 import Social
-
+import FBSDKShareKit
 
 class WebViewController: UIViewController, GADRewardBasedVideoAdDelegate,GADInterstitialDelegate {
     func rewardBasedVideoAd(_ rewardBasedVideoAd: GADRewardBasedVideoAd, didRewardUserWith reward: GADAdReward) {
         
     }
-    
 
+    
+    
     var tinhobj:TinhObj!
     var list=[HuyenObj]()
     var url = "http://123.30.100.126:8081/weblogalarm/lichmatdienv3.1.jsp?huyenid=toantinh&device=ios&tinhid="
@@ -28,6 +29,56 @@ class WebViewController: UIViewController, GADRewardBasedVideoAdDelegate,GADInte
     
     var interstitial: GADInterstitial!
 
+
+    @IBAction func share(_ sender: Any) {
+                var img = captureScreen()
+       
+//                let photo:FBSDKSharePhoto = FBSDKSharePhoto()
+//
+//                photo.image = #imageLiteral(resourceName: "star2")
+//                photo.isUserGenerated = false
+//        photo.caption = "Lich cup dien"
+//
+//                let content:FBSDKSharePhotoContent = FBSDKSharePhotoContent()
+//                content.photos = [photo]
+//
+//                let shareButton = FBSDKShareButton()
+//                //shareButton.center = view.center
+//
+//                shareButton.shareContent = content
+//
+//                shareButton.center = CGPoint(x: view.bounds.midX , y: view.bounds.maxY - 40)
+//                self.view.addSubview(shareButton)
+       
+        let photo:FBSDKSharePhoto = FBSDKSharePhoto()
+        
+        photo.image =  img
+        photo.isUserGenerated = true
+        
+        let content:FBSDKSharePhotoContent = FBSDKSharePhotoContent()
+        content.photos = [photo]
+        
+        let shareButton = FBSDKShareButton()
+        shareButton.center = view.center
+        
+        shareButton.shareContent = content
+        
+        //shareButton.center = self.view.center
+        shareButton.center = CGPoint(x: view.bounds.midX , y: view.bounds.maxY - 20)
+        self.view.addSubview(shareButton)
+        
+        
+    }
+    @IBAction func starclick(_ sender: Any) {
+        let defaults = UserDefaults.standard
+        defaults.set(tinhobj.tinhid, forKey: "tinhid")
+        defaults.set(tinhobj.tinhdau, forKey: "tinhdau")
+        
+        self.btnstar.setImage(#imageLiteral(resourceName: "star2"), for: .normal)
+    }
+    
+    @IBOutlet weak var btnstar: UIButton!
+    
 
     @IBOutlet weak var btnchon: UILabel!
     @IBAction func back(_ sender: Any) {
@@ -41,23 +92,7 @@ class WebViewController: UIViewController, GADRewardBasedVideoAdDelegate,GADInte
     }
     
     
-    //@IBOutlet weak var bannerView: GADBannerView!
-    @IBAction func shareinfo(_ sender: Any) {
-        if SLComposeViewController.isAvailable(forServiceType: SLServiceTypeFacebook) {
-            let controller = SLComposeViewController(forServiceType: SLServiceTypeFacebook)
-            
-            controller?.setInitialText("Thông tin cúp điện")
-            controller?.add(captureScreen())
-            self.present(controller!, animated:true, completion:nil)
-        }
-            
-        else {
-            print("no Facebook account found on device")
-            var alert = UIAlertView(title: "Thông báo", message: "Bạn chưa đăng nhập facebook", delegate: nil, cancelButtonTitle: "OK")
-            alert.show()
-        }
-
-    }
+    
     func captureScreen() -> UIImage
     {
         
@@ -105,12 +140,8 @@ class WebViewController: UIViewController, GADRewardBasedVideoAdDelegate,GADInte
 
         alamofireGetLog()
         
-//        //ads
-//        bannerView.adSize=kGADAdSizeSmartBannerPortrait
-//        print("Google Mobile Ads SDK version: \(GADRequest.sdkVersion())")
-//        bannerView.adUnitID = "ca-app-pub-8623108209004118/8052505184"
-//        bannerView.rootViewController = self
-//        bannerView.load(GADRequest())
+
+
         
         interstitial = GADInterstitial(adUnitID: "ca-app-pub-8623108209004118/5622775628")
         let request2 = GADRequest()

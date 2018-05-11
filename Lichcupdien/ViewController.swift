@@ -46,8 +46,8 @@ class ViewController: UIViewController ,GADNativeExpressAdViewDelegate, GADVideo
         bannerView.adUnitID = "ca-app-pub-8623108209004118/8052505184"
         bannerView.rootViewController = self
         bannerView.load(GADRequest())
-       
     }
+      
     override func loadView() {
         super.loadView()
         

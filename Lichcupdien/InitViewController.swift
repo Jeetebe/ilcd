@@ -1,7 +1,7 @@
 import UIKit
 import CarbonKit
 
-import FBSDKShareKit
+
 
 class IniiewController: UIViewController, CarbonTabSwipeNavigationDelegate {
     
@@ -36,41 +36,36 @@ class IniiewController: UIViewController, CarbonTabSwipeNavigationDelegate {
         let tabSwipe = CarbonTabSwipeNavigation(items: ["Danh mục tỉnh", "Yêu thích"], delegate: self)
         tabSwipe.setTabExtraWidth(40)
         //tabSwipe.toolbar.tintColor = UIColor.black
-        tabSwipe.toolbar.backgroundColor = UIColor.black
+        //tabSwipe.toolbar.backgroundColor = UIColor.black
         tabSwipe.insert(intoRootViewController: self)
+      
         
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         
-        let urlImage = NSURL(string: "https://upload.wikimedia.org/wikipedia/commons/0/0e/THSR_700T_Modern_High_Speed_Train.jpg")
-        
-//        let imageView = UIImageView(frame: CGRectMake(0, 0, 200, 200))
-//        imageView.center = CGPoint(x: view.center.x, y: 200)
-//        imageView.image = UIImage(data: NSData(contentsOfURL: urlImage! as URL)!)
-//        //imageView.contentMode = UIViewContentMode.ScaleAspectFit
-//        view.addSubview(imageView)
-         let link:String="Ứng dụng Lịch cúp điện  http://itunes.apple.com/app/id1232657493"
-        //let urlstr: String = "http://123.30.100.126:8081/Restapi/rest/lichcupdien/getdmtinhsupport"
-        print("url \(link)")
-        guard  let url = URL(string: link)
-            
-            else {
-                print("loi url")
-                return
+        let defaults = UserDefaults.standard
+        var ischon = defaults.bool(forKey: "ischon")
+        var tinhid = defaults.string(forKey: "tinhid")
+        print("chon \(ischon)")
+          print("tinhid \(tinhid)")
+        if ischon==false
+        {
+            goto_page_chon()
         }
+    }
+    func goto_page_chon()
+    {
+        var storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        var vc : ChonViewController = storyboard.instantiateViewController(withIdentifier: "ChonViewController") as! ChonViewController
+        self.present(vc, animated: false, completion: nil)
+    }
         
-        let content = FBSDKShareLinkContent()
-        content.contentURL = url
-       
-        
-       
-        
-        let shareButton = FBSDKShareButton()
-        //shareButton.center = CGPoint(x: view.center.x, y: 20)
-        shareButton.center = CGPoint(x: view.center.x + 30, y: 200)
-        shareButton.shareContent = content
-        view.addSubview(shareButton)
+   
+     
         
       
-    }
+    
     
     func carbonTabSwipeNavigation(_ carbonTabSwipeNavigation: CarbonTabSwipeNavigation, viewControllerAt index: UInt) -> UIViewController {
         guard let storyboard = storyboard else { return UIViewController() }
